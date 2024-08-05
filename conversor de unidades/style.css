@@ -36,7 +36,7 @@ h1 {
 .input-group label,
 .output-group label {
     margin-bottom: 0.4rem;
-    font.weight: bold;
+    font-weight: bold;
 }
 
 select,

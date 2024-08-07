@@ -34,21 +34,21 @@ switch(fromValue) {
         break;
     }
 
-    // Converter metros para unidade de saída
-    let result;
-    switch (toValue) {
-        case "m":
-            result = meters;
-            break;
-        case "km":
-            result = meters / 1000;
-            break;
-        case "cm":
-            result = meters * 100;
-            break
-        case "mm":
-            result = meters * 1000;
-            break;
+// Converter metros para unidade de saída
+let result;
+switch (toValue) {
+    case "m":
+        result = meters;
+        break;
+    case "km":
+        result = meters / 1000;
+        break;
+    case "cm":
+        result = meters * 100;
+        break;
+    case "mm":
+        result = meters * 1000;
+        break;
     }
 
 //  Exibir resultado no input

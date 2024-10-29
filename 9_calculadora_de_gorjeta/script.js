@@ -1,10 +1,8 @@
 const calculateBtn = document.querySelector("#calculateBtn");
 
 function calculateTip() {
-    const billAmount = parseFloat(document.querySelector("#billAmount").Value);
-    const serviceQuality = parseFloat(
-        document.querySelector("#serviceQuality").value
-    );
+    const billAmount = parseFloat(document.querySelector("#billAmount").value);
+    const serviceQuality = parseFloat(document.querySelector("#serviceQuality").value);
 
 if (billAmount === "") {
     alert("Por favor, prencha os dados.");

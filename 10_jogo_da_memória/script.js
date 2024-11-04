@@ -5,7 +5,24 @@ async function  generateImageParis() {
     for (let i = 0; i < cards.length; i++) {
         if (!imagePairs[cards[i]]) {
             const id = Math.floor(Math.random() * 1000) + 1;
-            const url = `https://pic`
+            const url = `https://picsum,photos/id/${id}/300/400`;
+            imagePairs[cards[i]] = [url,url];
         }
     } 
+    console.log(imagePairs);
+    return imagePairs;
 }
+
+function shuffleCards(cards) {
+    cards.sort(() => Math.random() - 0.5);
+}
+
+async function createCards() {
+    const imagePairs = await generateImageParis();
+    shuffleCards(cards);
+
+    console.log(cards);
+}
+
+createCards();
+    

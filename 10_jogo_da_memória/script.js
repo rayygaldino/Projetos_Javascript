@@ -68,5 +68,17 @@ function checkForMatch() {
     secondCard.getAttribute("data-card");
 isMatch ? disableCards() : unflipCards();
 }
+
+function disableCards() {
+    firstCard.removeEventListener("click", flipCard);
+    secondCard.removeEventListener("click", flipCard);
+  
+    console.log(document.querySelectorAll(".card:not(.flip)").length);
+    if (document.querySelectorAll(".card:not(.flip)").length === 0) {
+      showCongratulations();
+    }
+  
+    resetBoard();
+}
   
 

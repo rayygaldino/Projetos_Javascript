@@ -62,4 +62,11 @@ function flipCard() {
     }
   }
 
+function checkForMatch() {
+    const isMatch =
+    firstCard.getAttribute("data-card") ===
+    secondCard.getAttribute("data-card");
+isMatch ? disableCards() : unflipCards();
+}
+  
 

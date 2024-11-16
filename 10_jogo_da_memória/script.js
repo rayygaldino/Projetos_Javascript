@@ -5,17 +5,20 @@ async function  generateImageParis() {
     for (let i = 0; i < cards.length; i++) {
         if (!imagePairs[cards[i]]) {
             const id = Math.floor(Math.random() * 1000) + 1;
-            const url = `https://picsum.photos/id/${id}/300/400`;
-            imagePairs[cards[i]] = [url,url];
+            const url = `https://picsum.photos/id/${id}/100/300`;
+            imagePairs[cards[i]] = [url, url];
         }
     } 
-    console.log(imagePairs);
     return imagePairs;
 }
 
 function shuffleCards(cards) {
     cards.sort(() => Math.random() - 0.5);
 }
+
+let flippedCards = 0;
+let firstCard, secondCard;
+let attempts = 0;
 
 async function createCards() {
     const imagePairs = await generateImageParis();
@@ -42,9 +45,21 @@ async function createCards() {
         card.appendChild(cardFront);
         cardList.appendChild(card);
     }
-
-    console.log(cards);
 }
 
-createCards();
-    
+function flipCard() {
+    if (flippedCards < 2 && !this.classList.contains("flip")) {
+      flippedCards++;
+      this.classList.add("flip");
+      if (flippedCards === 1) {
+        firstCard = this;
+      } else {
+        secondCard = this;
+        attempts++;
+        updateAttempts();
+        checkForMatch();
+      }
+    }
+  }
+
+

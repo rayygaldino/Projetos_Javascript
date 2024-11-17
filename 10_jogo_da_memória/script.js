@@ -92,3 +92,13 @@ function unflipCards() {
 function resetBoard() {
   [flippedCards, firstCard, secondCard] = [0, null, null];
 }
+
+function showCongratulations() {
+  const congratulationsContainer = document.querySelector(
+    ".congratulations-container"
+  );
+  const congratulationsElement = document.createElement("p");
+  congratulationsElement.classList.add("congratulations");
+  congratulationsElement.textContent = `Parabéns! Você venceu em ${attempts} tentativas!`;
+  congratulationsContainer.appendChild(congratulationsElement);
+}
